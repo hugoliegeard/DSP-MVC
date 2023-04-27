@@ -13,12 +13,9 @@ class Classe
      * @param $capacite
      * @param $professeurPrincipal
      */
-    public function __construct($nom, $specialite, $capacite, $professeurPrincipal)
+    public function __construct($nom)
     {
         $this->nom = $nom;
-        $this->specialite = $specialite;
-        $this->capacite = $capacite;
-        $this->professeurPrincipal = $professeurPrincipal;
     }
 
     public function getNom()
@@ -50,7 +47,7 @@ class Classe
     {
         $this->specialite = $specialite;
     }
-    
+
     public function setCapacite($capacite)
     {
         $this->capacite = $capacite;

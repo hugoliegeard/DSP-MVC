@@ -43,5 +43,17 @@ echo "<h1>
 echo "<h1>{$ecole2->getNom()}</h1>";
 
 $ecole2->setNom('D.S.P');
-
 echo "<h1>{$ecole2->getNom()}</h1>";
+
+# Création d'objets élèves
+$eleve1 = new Eleve('Patrick', 'DELVOYE', 21);
+$eleve2 = new Eleve('Madjoula', 'TOURE', 24);
+$eleve3 = new Eleve('William', 'DEGHESELLE', 21);
+$eleve4 = new Eleve('Fouad', 'MOUTAIROU', 21);
+
+# Création d'objets classes
+$classe = new Classe('Front');
+$classe = new Classe('Back');
+$classe = new Classe('Fullstack');
+
+# Comment faire pour affecter des élèves a une classe, et des classes à une école ?
