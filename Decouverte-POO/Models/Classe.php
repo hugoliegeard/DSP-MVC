@@ -1,17 +1,17 @@
 <?php
 
+namespace Models;
+
 class Classe
 {
     private $nom;
     private $specialite;
     private $capacite;
     private $professeurPrincipal;
+    private $eleves = [];
 
     /**
      * @param $nom
-     * @param $specialite
-     * @param $capacite
-     * @param $professeurPrincipal
      */
     public function __construct($nom)
     {
@@ -56,6 +56,18 @@ class Classe
     public function setProfesseurPrincipal($professeurPrincipal)
     {
         $this->professeurPrincipal = $professeurPrincipal;
+    }
+
+    public function getEleves()
+    {
+        return $this->eleves;
+    }
+
+    public function ajouterUnEleve(Eleve $eleve)
+    {
+        if (!in_array($eleve, $this->eleves)) {
+            $this->eleves[] = $eleve;
+        }
     }
 
 }

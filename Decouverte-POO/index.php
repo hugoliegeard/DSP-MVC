@@ -1,6 +1,10 @@
 <?php
 
 # Importation de notre classe Ecole
+use Models\Classe;
+use Models\Ecole;
+use Models\Eleve;
+
 require_once './Models/Ecole.php';
 
 # Importation de notre classe Classe
@@ -37,7 +41,7 @@ echo '</pre>';
 
 $nom = $ecole->getNom();
 echo "<h1>
-        {$ecole->getNom()}
+        $nom
         <small>{$ecole->getDirecteur()}</small>
      </h1>";
 echo "<h1>{$ecole2->getNom()}</h1>";
@@ -52,8 +56,22 @@ $eleve3 = new Eleve('William', 'DEGHESELLE', 21);
 $eleve4 = new Eleve('Fouad', 'MOUTAIROU', 21);
 
 # Création d'objets classes
-$classe = new Classe('Front');
-$classe = new Classe('Back');
-$classe = new Classe('Fullstack');
+$classeFront = new Classe('Front');
+$classeBack = new Classe('Back');
+$classeFullstack = new Classe('Fullstack');
 
 # Comment faire pour affecter des élèves a une classe, et des classes à une école ?
+
+$classeFullstack->ajouterUnEleve($eleve1);
+$classeFullstack->ajouterUnEleve($eleve2);
+$classeFront->ajouterUnEleve($eleve3);
+$classeFront->ajouterUnEleve($eleve4);
+
+$ecole->ajouterUneClasse($classeFront);
+$ecole->ajouterUneClasse($classeBack);
+$ecole2->ajouterUneClasse($classeFullstack);
+
+echo '<pre>';
+print_r( $ecole );
+print_r( $ecole2 );
+echo '</pre>';

@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 /**
  * Une classe PHP est une entitée regroupant
  * par thème des variables appelée "propriétés",
@@ -22,6 +24,8 @@ class Ecole
     private $type;
 
     private $adresse;
+
+    private $classes = [];
 
     /**
      * Alors, pour permettre l'attribution
@@ -63,6 +67,11 @@ class Ecole
         return $this->adresse;
     }
 
+    public function getClasses()
+    {
+        return $this->classes;
+    }
+
     /*  -- ~ ° ~ --| Setters |-- ~ ° ~ -- */
 
     public function setNom($nom)
@@ -83,6 +92,13 @@ class Ecole
     public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
+    }
+
+    public function ajouterUneClasse(Classe $classe)
+    {
+        if (!in_array($classe, $this->classes)) {
+            $this->classes[] = $classe;
+        }
     }
 
 }
