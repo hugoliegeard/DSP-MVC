@@ -1,14 +1,16 @@
 <?php
 
-class DefaultController
+use Symfony\Component\HttpFoundation\Response;
+
+class DefaultController extends AbstractController
 {
-    public function home()
+    public function home(): Response
     {
-        echo "<h1>PAGE ACCUEIL | CONTROLLER</h1>";
+        return $this->render('default/home.html.twig');
     }
 
-    public function contact()
+    public function contact(): Response
     {
-        echo "<h1>PAGE CONTACT | CONTROLLER</h1>";
+        return $this->render('default/contact.html.twig');
     }
 }

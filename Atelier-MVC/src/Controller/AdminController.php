@@ -1,10 +1,10 @@
 <?php
 
-class AdminController
+class AdminController extends AbstractController
 {
     public function dashboard()
     {
-        echo "<h1>PAGE DASHBOARD | CONTROLLER</h1>";
+        return $this->render('admin/dashboard.html.twig');
     }
 
 }

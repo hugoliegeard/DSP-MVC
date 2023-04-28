@@ -1,12 +1,12 @@
 <?php
 
-class UserController
+class UserController extends AbstractController
 {
     public function register( ){
-        echo "<h1>PAGE INSCRIPTION | CONTROLLER</h1>";
+        return $this->render('user/register.html.twig');
     }
 
     public function login() {
-        echo "<h1>PAGE CONNEXION | CONTROLLER</h1>";
+        return $this->render('user/login.html.twig');
     }
 }

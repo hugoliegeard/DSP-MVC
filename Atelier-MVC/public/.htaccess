@@ -10,3 +10,4 @@ RewriteRule ^ - [L]
 
 # Règles de Réecriture
 RewriteRule ^([^/]+)/([^/]+) index.php?controller=$1&action=$2 [QSA,L]
+RewriteRule ^accueil.html index.php?controller=default&action=home [QSA,L]
